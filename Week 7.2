@@ -1,0 +1,17 @@
+import sys
+input_lines = sys.stdin.read().splitlines()
+num_words = int(input_lines[0])
+words = input_lines[1:num_words+1]
+first_row = set("qwertyuiop")
+second_row = set("asdfghjkl")
+third_row = set("zxcvbnm")
+result = []
+for word in words:
+    lower_word = set(word.lower())
+    if lower_word <= first_row or lower_word <= second_row or lower_word <= third_row:
+        result.append(word)
+if result:
+    for word in result:
+        print(word)
+else:
+    print("No words")
