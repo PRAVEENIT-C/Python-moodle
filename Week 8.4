@@ -1,0 +1,12 @@
+n = int(input())
+votes = [input() for _ in range(n)]
+c = {}
+for name in votes:
+    if name in c:
+        c[name] += 1
+    else:
+        c[name] = 1
+mv = max(c.values())
+winners = [name for name, votes in c.items() if votes == mv]
+winner = sorted(winners)[0]
+print(winner)
