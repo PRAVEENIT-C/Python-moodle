@@ -1,0 +1,14 @@
+t = tuple(map(int, input().split(',')))
+k = int(input())
+visited = set()
+distinct_pairs = set()
+for num in t:
+    complement = k - num
+    if complement in visited:
+        pair = (min(num, complement), max(num, complement))
+        distinct_pairs.add(pair)
+    visited.add(num)
+if distinct_pairs:
+    print(len(distinct_pairs))
+else:
+    print(0)
