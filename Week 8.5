@@ -1,0 +1,9 @@
+t = {}
+n = int(input())
+for _ in range(n):
+    key, *values = input().split()
+    t[key] = list(map(int, values))
+s = [key for key, _ in sorted(t.items(), key=lambda item: sum(item[1]))]
+r = {key: sum(t[key]) for key in s}
+for key, value in r.items():
+    print(key, value)
