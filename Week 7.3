@@ -1,0 +1,11 @@
+import sys
+input_lines = sys.stdin.read().splitlines()
+text = input_lines[0]
+broken_letters = input_lines[1]
+words = text.split()
+broken_set = set(broken_letters)
+count = 0
+for word in words:
+    if all(char not in broken_set and char.lower() not in broken_set for char in word):
+        count += 1
+print(count)
