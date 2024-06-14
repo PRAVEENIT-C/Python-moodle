@@ -1,0 +1,18 @@
+size1, size2 = map(int, input().split())
+array1 = list(map(int, input().split()))
+array2 = list(map(int, input().split()))
+set1 = set()
+set2 = set()
+for num in array1:
+    set1.add(num)
+for num in array2:
+    set2.add(num)
+non_repeating1 = set1 - set2
+non_repeating2 = set2 - set1
+result = sorted(non_repeating1.union(non_repeating2))
+count = len(result)
+if count > 0:
+    print(*result)
+else:
+    print("NO SUCH ELEMENTS")
+print(count)
